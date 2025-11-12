@@ -176,9 +176,9 @@ export default function decorate(block) {
       const textBlock = el.closest('[data-text-block-index]');
       const textBlockIndex = textBlock ? textBlock.getAttribute('data-text-block-index') : 'unknown';
       
-      // Count this tag within its container
-      const containerElements = container ? container.querySelectorAll(tag) : [el];
-      const tagIndex = Array.from(containerElements).indexOf(el);
+      // Count this tag within its text block
+      const textBlockElements = textBlock ? textBlock.querySelectorAll(tag) : [el];
+      const tagIndex = Array.from(textBlockElements).indexOf(el);
       
       el.id = `columns_${blockIndex}_text_${textBlockIndex}_${tag}_${tagIndex}`;
     });

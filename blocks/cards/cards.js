@@ -61,7 +61,7 @@ export default function decorate(block) {
         const textBlock = el.closest('[data-text-block-index]');
         const textBlockIndex = textBlock ? textBlock.getAttribute('data-text-block-index') : 'unknown';
         
-        // Count this tag within its container
+        // Count this tag within its text block
         const textBlockElements = textBlock ? textBlock.querySelectorAll(tag) : [el];
         const tagIndex = Array.from(textBlockElements).indexOf(el);
         
